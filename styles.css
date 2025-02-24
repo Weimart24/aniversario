@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #1A0826; /* Fondo violeta oscuro */
+    color: #E1BEE7; /* Texto en tono violeta claro */
+    margin: 0;
+    overflow: hidden;
+}
+
+.heart-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #9B59B6; /* Un tono más vibrante */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.side-menu {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #4A148C; /* Violeta oscuro profundo */
+    color: white;
+    transition: left 0.3s;
+    z-index: 1000;
+    padding-top: 60px;
+}
+
+.side-menu.active {
+    left: 0;
+}
+
+.close-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.side-menu ul li {
+    padding: 15px;
+}
+
+.side-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 8, 38, 0.7); /* Oscuro con transparencia */
+    display: none;
+    z-index: 999;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.event {
+    flex: 0 0 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+}
+
+.event img {
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    border: 3px solid #D1C4E9; /* Un borde violeta claro */
+}
+
+.event p {
+    max-width: 80%;
+    text-align: center;
+    font-size: 18px;
+    color: #E1BEE7; /* Texto violeta claro */
+}
