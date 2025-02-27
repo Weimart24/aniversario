@@ -6,6 +6,9 @@
     <title>Aniversario</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </head>
 <body>
     <button id="menuButton" class="heart-button">❤️</button>
@@ -20,8 +23,15 @@
     <div class="overlay"></div>
     <div class="timeline">
         <section id="evento1" class="event">
-            <img src="img/img1.jpg" alt="Viaje 1">
-            <p>Descripción del primer viaje juntos.</p>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="img/img1.jpg" alt="Viaje 1"><p>Descripción del primer viaje juntos.</p></div>
+                    <div class="swiper-slide"><img src="img/img2.jpg" alt="Viaje 1"><p>Descripción del segundo viaje juntos.</p></div>
+                    <div class="swiper-slide"><img src="img/img3.jpg" alt="Viaje 1"><p>Descripción del tercer viaje juntos.</p></div>
+                </div>
+                <!-- Paginación -->
+                <div class="swiper-pagination"></div>
+            </div>
         </section>
         <section id="evento2" class="event">
             <img src="img/img2.jpg" alt="Evento Especial">

@@ -42,3 +42,23 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Algunos elementos no se encontraron.");
     }
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    new Swiper(".swiper-container", {
+        loop: true, // Para que sea infinito
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        effect: "slide", // Puedes cambiar a "fade" o "cube"
+        autoplay: {
+            delay: 3000, // Cambia de imagen cada 3 segundos
+            disableOnInteraction: false, // No se detiene si el usuario interactúa
+        },
+    });
+});

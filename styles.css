@@ -122,3 +122,23 @@ body {
     font-size: 18px;
     color: #E1BEE7; /* Texto violeta claro */
 }
+
+
+.swiper-container {
+    width: 80%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.swiper-slide {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.swiper-slide img {
+    width: 98%;
+    border-radius: 10px;
+    
+}
