@@ -1,24 +1,74 @@
 body {
     font-family: Arial, sans-serif;
-    background: #1A0826; /* Fondo violeta oscuro */
-    color: #E1BEE7; /* Texto en tono violeta claro */
+    color: #E1BEE7;
     margin: 0;
     overflow: hidden;
 }
 
+/* ---------configuracion de header------------ */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 1000;
+    background: transparent;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@700&display=swap');
+
+.header h1 {
+    font-family: 'Pacifico', cursive; /* Fuente elegante */
+    font-size: 28px; /* Aumenté el tamaño */
+    color: white;
+    text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.6), 
+                 0 0 18px rgba(255, 150, 255, 0.7); /* Sombras más claras */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: glow 1s infinite alternate ease-in-out;
+}
+
+/* Efecto de brillo más suave */
+@keyframes glow {
+    0% { text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.6), 
+                  0 0 18px rgba(255, 150, 255, 0.7); }
+    100% { text-shadow: 3px 3px 14px rgba(255, 255, 255, 0.8), 
+                    0 0 22px rgba(255, 180, 255, 0.9); }
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Se mantiene detrás del contenido */
+    
+    backdrop-filter: blur(30px);
+
+    
+    mask-image: linear-gradient(to top, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.7) 40%, rgb(0,0,0) 80%);
+  }
+
 .heart-button {
     position: fixed;
-    top: 20px;
+    top: 15px;
     left: 20px;
     background: #9B59B6; /* Un tono más vibrante */
     color: white;
     border: none;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
     cursor: pointer;
-    animation: heartbeat 1.5s infinite;
+    animation: heartbeat 1s infinite;
 }
 
 @keyframes heartbeat {
@@ -26,6 +76,12 @@ body {
     50% { transform: scale(1.2); }
     100% { transform: scale(1); }
 }
+
+/* -------Configuración del header---------- */
+/*------------------------------------------ */
+
+/* ---------configuracion de side-menu------------ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 .side-menu {
     position: fixed;
@@ -35,9 +91,11 @@ body {
     height: 100%;
     background-color: #4A148C; /* Violeta oscuro profundo */
     color: white;
-    transition: left 0.3s;
+    transition: left 0.3s ease-in-out;
     z-index: 1000;
     padding-top: 60px;
+    background: linear-gradient(180deg, #D500F9, #7B1FA2, #4A148C, #1A237E);
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .side-menu.active {
@@ -53,26 +111,55 @@ body {
     color: white;
     font-size: 24px;
     cursor: pointer;
-    margin: 10px;
     padding: 5px;
     border-radius: 5px;
+    transition: 0.3s;
 }
 
+.close-menu:hover {
+    color: #ff4081; /* Rosa vibrante */
+}
+
+/* Estilos para la lista */
 .side-menu ul {
     list-style: none;
     padding: 0;
-    text-align: center;
+    margin: 0;
 }
 
 .side-menu ul li {
-    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el ícono y el texto */
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin: 5px 10px;
+    transition: 0.3s;
+    cursor: pointer;
 }
 
+.side-menu ul li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Enlaces con íconos */
 .side-menu ul li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    flex-grow: 1; /* Ocupa todo el espacio disponible */
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
+
+/* Iconos dentro del menú */
+.side-menu ul li i {
+    font-size: 20px;
+    color: #ffcc00; /* Amarillo para destacar */
+}
+
 
 .overlay {
     position: fixed;
@@ -80,10 +167,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(26, 8, 38, 0.7); /* Oscuro con transparencia */
+    background: rgba(26, 8, 38, 0.5); /* Oscuro con transparencia */
+    backdrop-filter: blur(10px); /* Aplicar desenfoque */
     display: none;
     z-index: 999;
-    transition: opacity 0.3s ease;
 }
 
 .overlay.active {
@@ -91,6 +178,9 @@ body {
     visibility: visible;
     opacity: 1;
 }
+
+
+/* ---------configuracion de side-menu------------ */
 
 .timeline {
     display: flex;
@@ -110,35 +200,47 @@ body {
 }
 
 .event img {
-    width: 80%;
-    max-width: 400px;
+    width: 90%;
+    max-width: 500px; /* maximo de ancho de la imagen */
     border-radius: 10px;
     border: 3px solid #D1C4E9; /* Un borde violeta claro */
 }
 
 .event p {
-    max-width: 80%;
+    max-width: 90%;
     text-align: center;
     font-size: 18px;
     color: #E1BEE7; /* Texto violeta claro */
 }
 
-
 .swiper-container {
-    width: 80%;
-    border-radius: 10px;
-    overflow: hidden;
+    width: 100%;
+    height: 80vh;
 }
 
-.swiper-slide {
+.event .swiper-slide {
     text-align: center;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 .swiper-slide img {
-    width: 98%;
-    border-radius: 10px;
-    
+    width: 90%;
+}
+
+/* FOOTER */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #1b023a;
+    color: rgb(210, 152, 243);
+    text-align: center;
+    padding: 2px 0;
+    font-size: 14px;
+    z-index: 1000; 
 }

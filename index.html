@@ -1,46 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aniversario</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style_background.css">
     <script defer src="script.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
-    <button id="menuButton" class="heart-button">❤️</button>
+    <!-- Quantity should be the same in Sass-->
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+
+    <!-- Encabezado con el botón del corazón -->
+    <header class="header">
+        <button id="menuButton" class="heart-button">❤️</button>
+        <h1>GATO PINTO</h1>
+    </header>
+
+    <!-- Menú lateral -->
     <nav id="sideMenu" class="side-menu">
         <button class="close-menu">✖</button>
         <ul>
-            <li><a href="#evento1">Viaje 1</a></li>
-            <li><a href="#evento2">Evento Especial</a></li>
-            <li><a href="#evento3">Aventura 3</a></li>
+            <li><a href="#evento1"><i class="fas fa-map-marked-alt"></i> Viaje 1</a></li>
+            <li><a href="#evento2"><i class="fas fa-star"></i> Evento Especial</a></li>
+            <li><a href="#evento3"><i class="fas fa-hiking"></i> Aventura 3</a></li>
         </ul>
     </nav>
+
     <div class="overlay"></div>
+
+    <!-- Línea de tiempo -->
     <div class="timeline">
         <section id="evento1" class="event">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="img/img1.jpg" alt="Viaje 1"><p>Descripción del primer viaje juntos.</p></div>
-                    <div class="swiper-slide"><img src="img/img2.jpg" alt="Viaje 1"><p>Descripción del segundo viaje juntos.</p></div>
-                    <div class="swiper-slide"><img src="img/img3.jpg" alt="Viaje 1"><p>Descripción del tercer viaje juntos.</p></div>
+                    <div class="swiper-slide"><img src="img/img1.jpg" alt="Viaje 1">
+                        <p>Descripción del juntos.</p>
+                    </div>
+                    <div class="swiper-slide"><img src="img/img2.jpg" alt="Viaje 1">
+                        <p>Descripción del segundo viaje juntos.</p>
+                    </div>
+                    <div class="swiper-slide"><img src="img/img3.jpg" alt="Viaje 1">
+                        <p>Descripción del tercer viaje juntos lorem impum sdfkjfksfkjh sdhfbg sk shbgkjshdf hsbk h jsh
+                            kjhsb kjhsbfhgsb hf bk kjsfhb lnkjks k jsdn ksj dkjs kjdksjfkjs fkjsdnfks .</p>
+                    </div>
                 </div>
-                <!-- Paginación -->
                 <div class="swiper-pagination"></div>
             </div>
         </section>
+
         <section id="evento2" class="event">
             <img src="img/img2.jpg" alt="Evento Especial">
             <p>Recuerdo especial de un día inolvidable.</p>
         </section>
+
         <section id="evento3" class="event">
             <img src="img/img3.jpg" alt="Aventura 3">
             <p>Una aventura increíble que vivimos.</p>
         </section>
     </div>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <p>Con mucho amor ❤️ para nuestra historia - 2024</p>
+    </footer>
+
 </body>
+
 </html>

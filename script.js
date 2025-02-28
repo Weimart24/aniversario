@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeButton = document.querySelector(".close-menu");
     const menuButton = document.querySelector(".heart-button");
     const menuLinks = document.querySelectorAll(".side-menu a");
+    const header = document.querySelectorAll(".header");
 
     // Function to close the menu and hide the overlay
     const closeMenu = () => {
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Open the menu and show the overlay when the menu button is clicked
         menuButton.addEventListener("click", () => {
             menu.classList.add("active");
+            overlay.classList.add("active");
             overlay.classList.add("active");
         });
 
@@ -53,9 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         pagination: {
             el: ".swiper-pagination",
-            clickable: true,
         },
-        effect: "slide", // Puedes cambiar a "fade" o "cube"
+        effect: "coverflow", // Puedes cambiar a "fade" o "cube"
         autoplay: {
             delay: 3000, // Cambia de imagen cada 3 segundos
             disableOnInteraction: false, // No se detiene si el usuario interactúa
