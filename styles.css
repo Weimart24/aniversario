@@ -207,16 +207,15 @@ body {
     flex: 0 0 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     scroll-snap-align: start;
 }
 
+
 .swiper-container {
     width: 96%; /* Ocupa el 90% del ancho de la pantalla */
     max-width: 800px; /* Máximo ancho en pantallas grandes */
-    height: 80vh; /* Ocupa el 60% de la altura de la pantalla */
-    top: 10px;
+    height: 80vh;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -224,7 +223,6 @@ body {
     align-items: center;
     border: solid 2px #ff4081;
     padding-bottom: 50px; /* Espacio para la paginación */
-    position: relative;
 }
 
 .event .swiper-slide {
