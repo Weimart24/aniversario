@@ -1,0 +1,8 @@
+{
+    "name": "Aniversario",
+    "short_name": "Aniversario",
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#6a0dad",
+    "background_color": "#ffffff"
+}

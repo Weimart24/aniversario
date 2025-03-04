@@ -1,3 +1,8 @@
+document.addEventListener("DOMContentLoaded", function () {
+    window.scrollTo(0, 1); // Desplaza la página 1px para esconder la barra de navegación en algunos móviles
+});
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const menu = document.querySelector(".side-menu");
     const overlay = document.querySelector(".overlay");
