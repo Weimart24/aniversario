@@ -1,6 +1,25 @@
-document.addEventListener("DOMContentLoaded", function () {
-    window.scrollTo(0, 1); // Desplaza la página 1px para esconder la barra de navegación en algunos móviles
-});
+window.onload = () => {
+    let btn = document.createElement("button");
+    btn.innerText = "Abrir en pantalla completa";
+    btn.style.position = "fixed";
+    btn.style.top = "50%";
+    btn.style.left = "50%";
+    btn.style.transform = "translate(-50%, -50%)";
+    btn.style.padding = "15px 20px";
+    btn.style.background = "#6a0dad";
+    btn.style.color = "white";
+    btn.style.border = "none";
+    btn.style.borderRadius = "10px";
+    btn.style.fontSize = "18px";
+    btn.style.cursor = "pointer";
+    
+    btn.addEventListener("click", () => {
+        document.documentElement.requestFullscreen();
+        btn.remove(); // Borra el botón después de activar fullscreen
+    });
+
+    document.body.appendChild(btn);
+};
 
 
 document.addEventListener("DOMContentLoaded", () => {

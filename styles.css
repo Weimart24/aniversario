@@ -213,15 +213,18 @@ body {
 }
 
 .swiper-container {
-    height: 80vh;
-    width: 90%; /* Deja márgenes laterales */
-    max-width: 500px; /* Evita que crezca demasiado en pantallas grandes */
-    margin: auto; /* Centrar el carrusel */
-    overflow: hidden; /* Ocultar desbordes */
+    width: 90%; /* Ocupa el 90% del ancho de la pantalla */
+    max-width: 500px; /* Máximo ancho en pantallas grandes */
+    height: 80vh; /* Ocupa el 60% de la altura de la pantalla */
+   
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: solid 2px #ff4081;
+    padding-bottom: 50px; /* Espacio para la paginación */
+    position: relative;
 }
 
 .event .swiper-slide {
@@ -230,19 +233,19 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 15px; /* Espacio entre imagen y texto */
+    gap: 15px;
 }
 
 .swiper-slide img {
-    width: 100%;
-    max-width: 400px; /* Limita el tamaño */
-    height: auto;
-    object-fit: contain; /* Se asegura de que la imagen completa sea visible */
+    max-height: 80%; /* La imagen ocupa el 80% de la altura del contenedor */
+    width: auto; /* Mantiene la proporción */
+    max-width: 100%; /* Evita que la imagen se salga */
+    object-fit: contain;
 }
 
 .swiper-pagination {
-    position: relative;
-    margin-top: 10px;
+    position: absolute;
+    bottom: 10px;
 }
 
 
