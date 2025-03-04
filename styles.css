@@ -213,10 +213,10 @@ body {
 }
 
 .swiper-container {
-    width: 90%; /* Ocupa el 90% del ancho de la pantalla */
-    max-width: 500px; /* Máximo ancho en pantallas grandes */
+    width: 96%; /* Ocupa el 90% del ancho de la pantalla */
+    max-width: 800px; /* Máximo ancho en pantallas grandes */
     height: 80vh; /* Ocupa el 60% de la altura de la pantalla */
-   
+    top: 10px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -237,7 +237,7 @@ body {
 }
 
 .swiper-slide img {
-    max-height: 80%; /* La imagen ocupa el 80% de la altura del contenedor */
+    max-height: 100%; /* La imagen ocupa el 80% de la altura del contenedor */
     width: auto; /* Mantiene la proporción */
     max-width: 100%; /* Evita que la imagen se salga */
     object-fit: contain;
@@ -255,10 +255,14 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
+    height: 40px; /* Altura fija */
     background: #1b023a;
     color: rgb(210, 152, 243);
     text-align: center;
-    padding: 2px 0;
     font-size: 14px;
     z-index: 1000; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
