@@ -70,16 +70,49 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    new Swiper(".swiper-container", {
-        loop: true, // Para que sea infinito
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-            el: ".swiper-pagination",
-        },
-        effect: "coverflow", // Puedes cambiar a "fade" o "cube"
+// CARRUSEL
+const carousels = document.querySelectorAll(".carousel");
+
+carousels.forEach(carousel => {
+    const container = carousel.querySelector(".carousel-container");
+    const slides = carousel.querySelectorAll(".carousel-slide");
+    const dotsContainer = carousel.querySelector(".carousel-dots");
+    
+    let index = 0;
+    
+    // Generar los puntos dinámicamente
+    dotsContainer.innerHTML = "";
+    slides.forEach((_, i) => {
+        const dot = document.createElement("div");
+        dot.classList.add("dot");
+        if (i === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll(".dot");
+
+    function updateCarousel() {
+        container.style.transform = `translateX(${-index * 100}%)`;
+        dots.forEach(dot => dot.classList.remove("active"));
+        dots[index].classList.add("active");
+    }
+
+    function goToSlide(i) {
+        index = i;
+        updateCarousel();
+    }
+
+    let startX = 0;
+    container.addEventListener("touchstart", (e) => startX = e.touches[0].clientX);
+    container.addEventListener("touchend", (e) => {
+        let endX = e.changedTouches[0].clientX;
+        if (startX > endX + 50) index = (index + 1) % slides.length; // Siguiente
+        if (startX < endX - 50) index = (index - 1 + slides.length) % slides.length; // Anterior
+        updateCarousel();
     });
 });
+
+
+
+

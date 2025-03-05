@@ -221,74 +221,106 @@ body {
     opacity: 1;
 }
 
-
 /* ---------configuracion de side-menu------------ */
+
 
 .timeline {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 80%;
     overflow-y: scroll;
-    scroll-snap-type: y mandatory;
+    padding: 18% 0;
 }
 
 .event {
-    flex: 0 0 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    scroll-snap-align: start;
+    height: 100%;
 }
 
-
-.swiper-container {
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    width: 90%;/* Ocupa el 90% del ancho de la pantalla */
-    max-width: 800px;/* Máximo ancho en pantallas grandes */
-    height: 80%;
-    border: solid 1px #ff4081;
-}
-
-.tittle {
-    display: flex;
-    color: #ff4081;
-    font-size: 24px;
-    border: solid 1px #000000;
+/* carrusel */
+.carousel {
     width: 100%;
-    height: 10%;
+    height: 100vh;
+    max-width: 600px; /* Ancho máximo */
+    overflow: hidden;
 }
 
-.swiper-container .swiper-slide {
+.carousel-title {
+    height: 4%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.carousel-container {
+    height: 86%;
+    width: 100%;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.carousel-slide img {
     width: 100%;
-    height: 70%;
-    border: solid 1px #ff0505;
+    height: 100%;
+    object-fit: contain;
 }
 
-.swiper-slide img {
-    width: 100%; /* Se ajusta al ancho del contenedor */
-    height: 100%; /* Se ajusta a la altura del contenedor */
-    object-fit: contain; /* Mantiene la proporción sin recortes */
-
-}
-
-.swiper-container .swiper-description {
+.carousel-comment {
+    height: 7%;
+    width: 100%;
     display: flex;
-    width: 100%;
-    height: 10%;
-    border: solid 1px #2bff00;
+    font-size: 1rem;
 }
 
-.swiper-pagination {
+.carousel-dots {
+    height: 3%;
     display: flex;
-    border: solid 1px #0051ff;
-    width: 100%;
-    height: 10%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: gray;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #ff4081;
+}
+
+/* FONDO DESENFOCADO */
+.fondo-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(20px); /* Efecto borroso */
+    opacity: 0.6; /* Ajustar transparencia */
+    transition: background-image 0.5s ease-in-out; /* Transición suave */
+    z-index: -1; /* Para que quede detrás del carrusel */
+}
+
+
 
 
 /* FOOTER */
