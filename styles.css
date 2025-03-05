@@ -1,19 +1,22 @@
-html, body {
-    overflow-x: hidden; /* Bloquea el desplazamiento horizontal */
-    overscroll-behavior-x: none; /* Evita el desplazamiento accidental */
-    width: 100%;
+html,
+body {
+    overflow-x: hidden;
+    /* Bloquea el desplazamiento horizontal */
+    overscroll-behavior-x: none;
+    /* Evita el desplazamiento accidental */
 }
 
 ::-webkit-scrollbar {
-    display: none; /* Oculta las barras de desplazamiento en Chrome, Edge y Safari */
+    display: none;
+    /* Oculta las barras de desplazamiento en Chrome, Edge y Safari */
 }
 
 body {
     font-family: Arial, sans-serif;
     color: #E1BEE7;
-    margin: 0;
-    overflow: hidden;
-    scrollbar-width: none; /* Oculta la barra de desplazamiento en Firefox */
+    /* overflow: hidden; */
+    scrollbar-width: none;
+    /* Oculta la barra de desplazamiento en Firefox */
 }
 
 /* ---------configuracion de header------------ */
@@ -22,7 +25,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 20%;
+    height: 15%;
     color: white;
     text-align: center;
     font-size: 16px;
@@ -34,11 +37,14 @@ body {
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@700&display=swap');
 
 .header h1 {
-    font-family: 'Pacifico', cursive; /* Fuente elegante */
-    font-size: 28px; /* Aumenté el tamaño */
+    font-family: 'Pacifico', cursive;
+    /* Fuente elegante */
+    font-size: 28px;
+    /* Aumenté el tamaño */
     color: white;
-    text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.6), 
-                 0 0 18px rgba(255, 150, 255, 0.7); /* Sombras más claras */
+    text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.6),
+        0 0 18px rgba(255, 150, 255, 0.7);
+    /* Sombras más claras */
     letter-spacing: 2px;
     text-transform: uppercase;
     animation: glow 1s infinite alternate ease-in-out;
@@ -46,10 +52,15 @@ body {
 
 /* Efecto de brillo más suave */
 @keyframes glow {
-    0% { text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.4), 
-                  0 0 18px rgba(255, 150, 255, 0.4); }
-    100% { text-shadow: 3px 3px 14px rgba(255, 255, 255, 0.9), 
-                    0 0 22px rgba(255, 180, 255, 0.9); }
+    0% {
+        text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.4),
+            0 0 18px rgba(255, 150, 255, 0.4);
+    }
+
+    100% {
+        text-shadow: 3px 3px 14px rgba(255, 255, 255, 0.9),
+            0 0 22px rgba(255, 180, 255, 0.9);
+    }
 }
 
 .header::before {
@@ -59,13 +70,15 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Se mantiene detrás del contenido */
-    
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px); /* Compatibilidad con iOS */
+    z-index: -1;
+    /* Se mantiene detrás del contenido */
 
-    mask-image: linear-gradient(to top, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.7) 40%, rgb(0,0,0) 80%);
-    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.7) 40%, rgb(0,0,0) 80%);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    /* Compatibilidad con iOS */
+
+    mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.7) 40%, rgb(0, 0, 0) 80%);
+    -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.7) 40%, rgb(0, 0, 0) 80%);
 }
 
 
@@ -73,7 +86,8 @@ body {
     position: fixed;
     top: 15px;
     left: 20px;
-    background: #9B59B6; /* Un tono más vibrante */
+    background: #9B59B6;
+    /* Un tono más vibrante */
     color: white;
     border: none;
     border-radius: 50%;
@@ -85,9 +99,17 @@ body {
 }
 
 @keyframes heartbeat {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 /* -------Configuración del header---------- */
@@ -102,7 +124,8 @@ body {
     top: 0;
     width: 250px;
     height: 100%;
-    background-color: #4A148C; /* Violeta oscuro profundo */
+    background-color: #4A148C;
+    /* Violeta oscuro profundo */
     color: white;
     transition: left 0.3s ease-in-out;
     z-index: 1000;
@@ -130,7 +153,8 @@ body {
 }
 
 .close-menu:hover {
-    color: #ff4081; /* Rosa vibrante */
+    color: #ff4081;
+    /* Rosa vibrante */
 }
 
 /* Estilos para la lista */
@@ -143,7 +167,8 @@ body {
 .side-menu ul li {
     display: flex;
     align-items: center;
-    gap: 10px; /* Espacio entre el ícono y el texto */
+    gap: 10px;
+    /* Espacio entre el ícono y el texto */
     padding: 12px 20px;
     border-radius: 8px;
     margin: 5px 10px;
@@ -161,7 +186,8 @@ body {
     text-decoration: none;
     font-size: 18px;
     font-family: 'Poppins', sans-serif;
-    flex-grow: 1; /* Ocupa todo el espacio disponible */
+    flex-grow: 1;
+    /* Ocupa todo el espacio disponible */
     display: flex;
     align-items: center;
     gap: 10px;
@@ -170,7 +196,8 @@ body {
 /* Iconos dentro del menú */
 .side-menu ul li i {
     font-size: 20px;
-    color: #ffcc00; /* Amarillo para destacar */
+    color: #ffcc00;
+    /* Amarillo para destacar */
 }
 
 
@@ -180,8 +207,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(26, 8, 38, 0.5); /* Oscuro con transparencia */
-    backdrop-filter: blur(10px); /* Aplicar desenfoque */
+    background: rgba(26, 8, 38, 0.5);
+    /* Oscuro con transparencia */
+    backdrop-filter: blur(10px);
+    /* Aplicar desenfoque */
     display: none;
     z-index: 999;
 }
@@ -207,43 +236,58 @@ body {
     flex: 0 0 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     scroll-snap-align: start;
 }
 
 
 .swiper-container {
-    width: 96%; /* Ocupa el 90% del ancho de la pantalla */
-    max-width: 800px; /* Máximo ancho en pantallas grandes */
-    height: 80vh;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: solid 2px #ff4081;
-    padding-bottom: 50px; /* Espacio para la paginación */
+    width: 90%;/* Ocupa el 90% del ancho de la pantalla */
+    max-width: 800px;/* Máximo ancho en pantallas grandes */
+    height: 80%;
+    border: solid 1px #ff4081;
 }
 
-.event .swiper-slide {
-    text-align: center;
+.tittle {
     display: flex;
-    flex-direction: column;
+    color: #ff4081;
+    font-size: 24px;
+    border: solid 1px #000000;
+    width: 100%;
+    height: 10%;
+}
+
+.swiper-container .swiper-slide {
+    display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 15px;
+    width: 100%;
+    height: 70%;
+    border: solid 1px #ff0505;
 }
 
 .swiper-slide img {
-    max-height: 100%; /* La imagen ocupa el 80% de la altura del contenedor */
-    width: auto; /* Mantiene la proporción */
-    max-width: 100%; /* Evita que la imagen se salga */
-    object-fit: contain;
+    width: 100%; /* Se ajusta al ancho del contenedor */
+    height: 100%; /* Se ajusta a la altura del contenedor */
+    object-fit: contain; /* Mantiene la proporción sin recortes */
+
+}
+
+.swiper-container .swiper-description {
+    display: flex;
+    width: 100%;
+    height: 10%;
+    border: solid 1px #2bff00;
 }
 
 .swiper-pagination {
-    position: absolute;
-    bottom: 10px;
+    display: flex;
+    border: solid 1px #0051ff;
+    width: 100%;
+    height: 10%;
 }
 
 
@@ -253,14 +297,14 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 40px; /* Altura fija */
+    height: 40px;
+    /* Altura fija */
     background: #1b023a;
     color: rgb(210, 152, 243);
     text-align: center;
     font-size: 14px;
-    z-index: 1000; 
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-

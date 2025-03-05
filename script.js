@@ -81,9 +81,5 @@ document.addEventListener("DOMContentLoaded", function () {
             el: ".swiper-pagination",
         },
         effect: "coverflow", // Puedes cambiar a "fade" o "cube"
-        autoplay: {
-            delay: 3000, // Cambia de imagen cada 3 segundos
-            disableOnInteraction: false, // No se detiene si el usuario interactúa
-        },
     });
 });
