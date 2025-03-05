@@ -4,12 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Aniversario</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="style_background.css">
     <script defer src="script.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
@@ -85,7 +84,6 @@
                 <div class="carousel-comment">Comentario sobre la imagen</div>
             </div>
         </section>
-    
         <section id="evento3" class="event">
             <div class="carousel">
                 <div class="carousel-title">Título del evento</div>
@@ -101,7 +99,6 @@
                 </div>
                 <div class="carousel-comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</div>
             </div>
-            
         </section>
     </div>
     
@@ -111,5 +108,14 @@
     </footer>
 
 </body>
+
+<!-- Modal para ver imagen -->
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <div class="modal-content">
+        <img id="modalImage" src="" alt="Imagen ampliada">
+    </div>
+</div>
+
 
 </html>

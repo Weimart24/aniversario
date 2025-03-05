@@ -238,18 +238,25 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
+    scroll-margin-top: 80px; /* Ajusta este valor según el tamaño del header */
+    padding-top: 20px;
+    border-top: 2px solid rgba(150, 150, 150, 0.3); /* Línea delgada y suave */
+}
+
+.event:first-child {
+    border-top: none; /* Quita la línea del primer evento */
 }
 
 /* carrusel */
 .carousel {
     width: 100%;
-    height: 100vh;
+    height: 60vh;
     max-width: 600px; /* Ancho máximo */
     overflow: hidden;
 }
 
 .carousel-title {
-    height: 4%;
+    height: 6%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -258,7 +265,7 @@ body {
 }
 
 .carousel-container {
-    height: 86%;
+    height: 79%;
     width: 100%;
     display: flex;
     transition: transform 0.5s ease-in-out;
@@ -275,18 +282,19 @@ body {
 .carousel-slide img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .carousel-comment {
-    height: 7%;
+    height: 12%;
     width: 100%;
     display: flex;
-    font-size: 1rem;
+    font-size: 0.8rem;
+    overflow: hidden;
 }
 
 .carousel-dots {
-    height: 3%;
+    height: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -304,22 +312,6 @@ body {
 .dot.active {
     background: #ff4081;
 }
-
-/* FONDO DESENFOCADO */
-.fondo-blur {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    filter: blur(20px); /* Efecto borroso */
-    opacity: 0.6; /* Ajustar transparencia */
-    transition: background-image 0.5s ease-in-out; /* Transición suave */
-    z-index: -1; /* Para que quede detrás del carrusel */
-}
-
 
 
 
@@ -340,3 +332,54 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+
+
+/* MODAL IMAGEN COMPLETA */
+/* === ESTILOS DEL MODAL === */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Permite mover la imagen libremente */
+}
+
+.modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.modal-content img {
+    max-width: none; /* Permite crecer más allá del tamaño original */
+    max-height: none;
+    width: auto;
+    height: auto;
+    transform-origin: center;
+    transition: transform 0.2s ease-in-out;
+    cursor: grab;
+}
+
+/* Cerrar modal */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2000;
+}
+
