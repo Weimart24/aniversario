@@ -126,6 +126,7 @@ const modal = document.getElementById("imageModal");
         img.addEventListener("click", function () {
             modal.style.display = "flex";
             modalImg.src = this.src;
+            resetTransform(); // Resetea zoom y posición al abrir la imagen
         });
     });
 

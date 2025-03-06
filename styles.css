@@ -362,14 +362,16 @@ body {
 }
 
 .modal-content img {
-    max-width: none; /* Permite crecer más allá del tamaño original */
-    max-height: none;
+    max-width: 90vw; /* Ajusta la imagen al ancho de la pantalla */
+    max-height: 90vh; /* Ajusta la imagen al alto de la pantalla */
     width: auto;
     height: auto;
+    object-fit: contain; /* Se asegura de que la imagen completa sea visible */
     transform-origin: center;
     transition: transform 0.2s ease-in-out;
     cursor: grab;
 }
+
 
 /* Cerrar modal */
 .close {
