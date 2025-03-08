@@ -1,24 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const lazyImages = document.querySelectorAll(".lazy-load");
+    let sections = document.querySelectorAll(".event");
 
-    const imageObserver = new IntersectionObserver((entries, observer) => {
+    let observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src; // Carga la imagen real
-                img.removeAttribute("data-src"); // Limpia el atributo una vez cargado
-                img.classList.remove("lazy-load"); // Opcional: Remueve la clase después de cargar
-                observer.unobserve(img); // Deja de observar la imagen
+            if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+                let images = entry.target.querySelectorAll("img[data-src]");
+                images.forEach(img => {
+                    img.style.filter = "blur(10px)"; // Efecto desenfoque inicial
+                    img.style.transition = "filter 0.5s ease-in-out, width 0.5s ease-in-out";
+
+                    img.src = img.getAttribute("data-src"); // Cargar la imagen real
+                    img.onload = () => {
+                        img.removeAttribute("width"); // Restaurar tamaño original
+                        img.style.filter = "blur(0)"; // Quitar desenfoque
+                        img.removeAttribute("data-src"); // Evitar recarga innecesaria
+                    };
+                });
+                observer.unobserve(entry.target);
             }
         });
-    });
+    }, { threshold: 0.5 });
 
-    lazyImages.forEach(img => {
-        imageObserver.observe(img);
-    });
+    sections.forEach(section => observer.observe(section));
 });
-
-
 
 
 document.addEventListener("DOMContentLoaded", () => {
