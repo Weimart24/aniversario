@@ -34,6 +34,13 @@ body {
     background: transparent;
 }
 
+.logo {
+    position: absolute;
+    top: 2px;
+    right: 18px;
+    height: 60px; /* Ajusta el tamaño del logo según necesites */
+    width: auto;
+}
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@700&display=swap');
 
 .header h1 {
@@ -123,15 +130,18 @@ body {
     left: -250px;
     top: 0;
     width: 250px;
-    height: 100%;
+    height: 89%;
     background-color: #4A148C;
-    /* Violeta oscuro profundo */
     color: white;
     transition: left 0.3s ease-in-out;
     z-index: 1000;
     padding-top: 60px;
     background: linear-gradient(180deg, #D500F9, #7B1FA2, #4A148C, #1A237E);
     box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
+
+    /* Habilitar scroll sin cortar contenido */
+    overflow-y: auto;
+    max-height: calc(100vh - 20px);
 }
 
 .side-menu.active {
@@ -168,12 +178,22 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    /* Espacio entre el ícono y el texto */
     padding: 12px 20px;
     border-radius: 8px;
     margin: 5px 10px;
     transition: 0.3s;
     cursor: pointer;
+}
+
+.side-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
 }
 
 .side-menu ul li:hover {
@@ -196,8 +216,8 @@ body {
 /* Iconos dentro del menú */
 .side-menu ul li i {
     font-size: 20px;
-    color: #ffcc00;
-    /* Amarillo para destacar */
+    color: #ffcc00; /* Amarillo para destacar */
+    flex-shrink: 0; /* Evita que los íconos desaparezcan */
 }
 
 

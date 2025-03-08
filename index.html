@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <title>Aniversario</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="style_background.css">
-    <script defer src="script.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenida Jeimy Pinto</title>
+  <link rel="stylesheet" href="styleWelcome.css">
+  <link rel="stylesheet" href="style_background.css">
 </head>
-
 <body>
-    <!-- Quantity should be the same in Sass-->
+    <!-- Lucecitas de fondo -->
     <div class="firefly"></div>
     <div class="firefly"></div>
     <div class="firefly"></div>
@@ -30,241 +25,25 @@
     <div class="firefly"></div>
     <div class="firefly"></div>
 
-    <!-- Encabezado con el botón del corazón -->
-    <header class="header">
-        <button id="menuButton" class="heart-button">❤️</button>
-        <h1>GATO PINTO</h1>
-    </header>
-
-    <!-- Menú lateral -->
-    <nav id="sideMenu" class="side-menu">
-        <button class="close-menu">✖</button>
-        <ul>
-            <li><a href="#evento1"><i class="fas fa-map-marked-alt"></i> Primer Encuentro</a></li>
-            <li><a href="#evento2"><i class="fas fa-star"></i> Primera Tomada de pola</a></li>
-            <li><a href="#evento3"><i class="fas fa-hiking"></i> Primer paseo juntos</a></li>
-            <li><a href="#evento4"><i class="fas fa-calendar-day"></i> Evento 4</a></li>
-            <li><a href="#evento5"><i class="fas fa-calendar-day"></i> Evento 5</a></li>
-            <li><a href="#evento6"><i class="fas fa-calendar-day"></i> Evento 6</a></li>
-            <li><a href="#evento7"><i class="fas fa-calendar-day"></i> Evento 7</a></li>
-            <li><a href="#evento8"><i class="fas fa-calendar-day"></i> Evento 8</a></li>
-            <li><a href="#evento9"><i class="fas fa-calendar-day"></i> Evento 9</a></li>
-            <li><a href="#evento10"><i class="fas fa-calendar-day"></i> Evento 10</a></li>
-            <li><a href="#evento11"><i class="fas fa-calendar-day"></i> Evento 11</a></li>
-            <li><a href="#evento12"><i class="fas fa-calendar-day"></i> Evento 12</a></li>
-            <li><a href="#evento13"><i class="fas fa-calendar-day"></i> Evento 13</a></li>
-            <li><a href="#evento14"><i class="fas fa-calendar-day"></i> Evento 14</a></li>
-            <li><a href="#evento15"><i class="fas fa-calendar-day"></i> Evento 15</a></li>
-            <li><a href="#evento16"><i class="fas fa-calendar-day"></i> Evento 16</a></li>
-            <li><a href="#evento17"><i class="fas fa-calendar-day"></i> Evento 17</a></li>
-            <li><a href="#evento18"><i class="fas fa-calendar-day"></i> Evento 18</a></li>
-            <li><a href="#evento19"><i class="fas fa-calendar-day"></i> Evento 19</a></li>
-            <li><a href="#evento20"><i class="fas fa-calendar-day"></i> Evento 20</a></li>
-            <li><a href="#evento21"><i class="fas fa-calendar-day"></i> Evento 21</a></li>
-            <li><a href="#evento22"><i class="fas fa-calendar-day"></i> Evento 22</a></li>
-            <li><a href="#evento23"><i class="fas fa-calendar-day"></i> Evento 23</a></li>
-            <li><a href="#evento24"><i class="fas fa-calendar-day"></i> Evento 24</a></li>
-            <li><a href="#evento25"><i class="fas fa-calendar-day"></i> Evento 25</a></li>
-            <li><a href="#evento26"><i class="fas fa-calendar-day"></i> Evento 26</a></li>
-            <li><a href="#evento27"><i class="fas fa-calendar-day"></i> Evento 27</a></li>
-            <li><a href="#evento28"><i class="fas fa-calendar-day"></i> Evento 28</a></li>
-        </ul>
-    </nav>
-
-    <div class="overlay"></div>
-
-    <!-- Línea de tiempo -->
-    <div class="timeline">
-        <section id="evento1" class="event">
-            <div class="carousel">
-                <div class="carousel-title">Primer Encuentro</div>
-                <div class="carousel-container">
-                    <div class="carousel-slide"><img src="img/1. 16SEP2023/1.jpg" alt="Imagen 1"></div>
-                </div>
-                <div class="carousel-dots">
-                    <div class="dot active"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                </div>
-                <div class="carousel-comment">Comentario sobre la imagen</div>
-            </div>
-        </section>
-    
-        <section id="evento2" class="event">
-            <div class="carousel">
-                <div class="carousel-title">Primera Tomada de pola</div>
-                <div class="carousel-container">
-                    <div class="carousel-slide"><img src="img/2. 6NOV2023/1.jpg" alt="Imagen 1"></div>
-                </div>
-                <div class="carousel-dots">
-                    <div class="dot active"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                </div>
-                <div class="carousel-comment">Comentario sobre la imagen</div>
-            </div>
-        </section>
-        <section id="evento3" class="event">
-            <div class="carousel">
-                <div class="carousel-title">Primer paseo juntos</div>
-                <div class="carousel-container">
-                    <div class="carousel-slide"><img src="img/3. 19NOV2023/1.jpg" alt="Imagen 1"></div>
-                    <div class="carousel-slide"><img src="img/3. 19NOV2023/2.jpg" alt="Imagen 1"></div>
-                    <div class="carousel-slide"><img src="img/3. 19NOV2023/3.jpg" alt="Imagen 1"></div>
-                    <div class="carousel-slide"><img src="img/3. 19NOV2023/4.jpg" alt="Imagen 1"></div>
-                    <div class="carousel-slide"><img src="img/3. 19NOV2023/5.jpg" alt="Imagen 1"></div>
-                    <div class="carousel-slide"><img src="img/3. 19NOV2023/6.jpg" alt="Imagen 1"></div>
-                    <div class="carousel-slide"><img src="img/3. 19NOV2023/7.jpg" alt="Imagen 1"></div>
-                    <div class="carousel-slide"><img src="img/3. 19NOV2023/8.jpg" alt="Imagen 1"></div>
-                    <div class="carousel-slide"><img src="img/3. 19NOV2023/9.jpg" alt="Imagen 1"></div>
-                </div>
-                <div class="carousel-dots">
-                    <div class="dot active"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                </div>
-                <div class="carousel-comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</div>
-            </div>
-        </section>
-
-        <!-- Secciones adicionales -->
-        <section id="evento4" class="event">
-            <div class="carousel">
-                <div class="carousel-title">Evento 4</div>
-                <div class="carousel-container">
-                    <div class="carousel-slide"><img src="img/4. 17DIC2023/1.jpg" alt="Imagen 1"></div>
-                </div>
-                <div class="carousel-dots">
-                    <div class="dot active"></div>
-                </div>
-                <div class="carousel-comment">Comentario sobre la imagen</div>
-            </div>
-        </section>
-
-        <section id="evento5" class="event">
-            <div class="carousel">
-                <div class="carousel-title">Evento 5</div>
-                <div class="carousel-container">
-                    <div class="carousel-slide"><img src="img/5. 1ENE2024/1.jpg" alt="Imagen 1"></div>
-                    <div class="carousel-slide"><img src="img/5. 1ENE2024/2.jpg" alt="Imagen 2"></div>
-                </div>
-                <div class="carousel-dots">
-                    <div class="dot active"></div>
-                    <div class="dot"></div>
-                </div>
-                <div class="carousel-comment">Comentario sobre la imagen</div>
-            </div>
-        </section>
-
-        <section id="evento6" class="event">
-            <div class="carousel">
-                <div class="carousel-title">Evento 6</div>
-                <div class="carousel-container">
-                    <div class="carousel-slide"><img src="img/6. 20ENE2024/1.jpg" alt="Imagen 1"></div>
-                    <div class="carousel-slide"><img src="img/6. 20ENE2024/2.jpg" alt="Imagen 2"></div>
-                    <div class="carousel-slide"><img src="img/6. 20ENE2024/3.jpg" alt="Imagen 3"></div>
-                    <div class="carousel-slide"><img src="img/6. 20ENE2024/4.jpg" alt="Imagen 4"></div>
-                </div>
-                <div class="carousel-dots">
-                    <div class="dot active"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                </div>
-                <div class="carousel-comment">Comentario sobre la imagen</div>
-            </div>
-        </section>
-
-        <section id="evento7" class="event">
-            <div class="carousel">
-                <div class="carousel-title">Evento 7</div>
-                <div class="carousel-container">
-                    <div class="carousel-slide"><img src="img/7. 23ENE2024/1.jpg" alt="Imagen 1"></div>
-                    <div class="carousel-slide"><img src="img/7. 23ENE2024/2.jpg" alt="Imagen 2"></div>
-                </div>
-                <div class="carousel-dots">
-                    <div class="dot active"></div>
-                    <div class="dot"></div>
-                </div>
-                <div class="carousel-comment">Comentario sobre la imagen</div>
-            </div>
-        </section>
-
-        <section id="evento8" class="event">
-            <div class="carousel">
-                <div class="carousel-title">Evento 8</div>
-                <div class="carousel-container">
-                    <div class="carousel-slide"><img src="img/8. 28ENE2024/1.jpg" alt="Imagen 1"></div>
-                    <div class="carousel-slide"><img src="img/8. 28ENE2024/2.jpg" alt="Imagen 2"></div>
-                    <div class="carousel-slide"><img src="img/8. 28ENE2024/3.jpg" alt="Imagen 3"></div>
-                    <div class="carousel-slide"><img src="img/8. 28ENE2024/4.jpg" alt="Imagen 4"></div>
-                    <div class="carousel-slide"><img src="img/8. 28ENE2024/5.jpg" alt="Imagen 5"></div>
-                    <div class="carousel-slide"><img src="img/8. 28ENE2024/6.jpg" alt="Imagen 6"></div>
-                    <div class="carousel-slide"><img src="img/8. 28ENE2024/7.jpg" alt="Imagen 7"></div>
-                    <div class="carousel-slide"><img src="img/8. 28ENE2024/8.jpg" alt="Imagen 8"></div>
-                    <div class="carousel-slide"><img src="img/8. 28ENE2024/9.jpg" alt="Imagen 9"></div>
-                </div>
-                <div class="carousel-dots">
-                    <div class="dot active"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                </div>
-                <div class="carousel-comment">Comentario sobre la imagen</div>
-            </div>
-        </section>
-
-        <!-- Agrega más secciones aquí siguiendo el mismo formato -->
-        <!-- Ejemplo para evento 9 -->
-        <section id="evento9" class="event">
-            <div class="carousel">
-                <div class="carousel-title">Evento 9</div>
-                <div class="carousel-container">
-                    <div class="carousel-slide"><img src="img/9. 14FEB2024/1.jpg" alt="Imagen 1"></div>
-                    <div class="carousel-slide"><img src="img/9. 14FEB2024/2.jpg" alt="Imagen 2"></div>
-                </div>
-                <div class="carousel-dots">
-                    <div class="dot active"></div>
-                    <div class="dot"></div>
-                </div>
-                <div class="carousel-comment">Comentario sobre la imagen</div>
-            </div>
-        </section>
-
-        <!-- Continúa agregando secciones hasta evento 28 -->
-        <!-- Ejemplo para evento 28 -->
-        <section id="evento28" class="event">
-            <div class="carousel">
-                <div class="carousel-title">Evento 28</div>
-                <div class="carousel-container">
-                    <div class="carousel-slide"><img src="img/28. 19ENE2025/1.jpg" alt="Imagen 1"></div>
-                    <div class="carousel-slide"><img src="img/28. 19ENE2025/2.jpg" alt="Imagen 2"></div>
-                    <div class="carousel-slide"><img src="img/28. 19ENE2025/3.jpg" alt="Imagen 3"></div>
-                    <div class="carousel-slide"><img src="img/28. 19ENE2025/4.jpg" alt="Imagen 4"></div>
-                </div>
-                <div class="carousel-dots">
-                    <div class="dot active"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                </div>
-                <div class="carousel-comment">Comentario sobre la imagen</div>
-            </div>
-        </section>
-    </div>
-    
-    <!-- Pie de página -->
-    <footer class="footer">
-        <p>Con mucho amor ❤️ para nuestra historia - 2024</p>
-    </footer>
-
-    <!-- Modal para ver imagen -->
-    <div id="imageModal" class="modal">
-        <span class="close">&times;</span>
-        <div class="modal-content">
-            <img id="modalImage" src="" alt="Imagen ampliada">
-        </div>
-    </div>
-
+  <div class="welcome-container">
+    <img src="img/logo.png" alt="Logo" class="welcome-logo">
+    <h1 class="welcome-title">Bienvenida, Jeimy</h1>
+    <p class="welcome-text">
+      Esta es una galería de fotos de todas las aventuras que hemos vivido en nuestro primer aniversario.  
+      Cada imagen es un recuerdo de los momentos inolvidables que hemos compartido.  
+      ¡Espero que disfrutes este recorrido lleno de amor y alegría! 💖✨
+    </p>
+    <button class="welcome-button">Ingresar</button>
+  </div>
 </body>
 
+<div id="fullscreenModal" class="modal">
+    <div class="modal-content">
+        <p>Para una mejor experiencia, la página se mostrará en pantalla completa.</p>
+        <button id="confirmFullscreen">Aceptar</button>
+        <button id="cancelFullscreen">Cancelar</button>
+    </div>
+</div>
+<script defer src="scriptWelcome.js"></script>
 </html>
+

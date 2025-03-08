@@ -1,25 +1,24 @@
-window.onload = () => {
-    let btn = document.createElement("button");
-    btn.innerText = "Abrir en pantalla completa";
-    btn.style.position = "fixed";
-    btn.style.top = "50%";
-    btn.style.left = "50%";
-    btn.style.transform = "translate(-50%, -50%)";
-    btn.style.padding = "15px 20px";
-    btn.style.background = "#6a0dad";
-    btn.style.color = "white";
-    btn.style.border = "none";
-    btn.style.borderRadius = "10px";
-    btn.style.fontSize = "18px";
-    btn.style.cursor = "pointer";
-    
-    btn.addEventListener("click", () => {
-        document.documentElement.requestFullscreen();
-        btn.remove(); // Borra el botón después de activar fullscreen
+document.addEventListener("DOMContentLoaded", function () {
+    const lazyImages = document.querySelectorAll(".lazy-load");
+
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src; // Carga la imagen real
+                img.removeAttribute("data-src"); // Limpia el atributo una vez cargado
+                img.classList.remove("lazy-load"); // Opcional: Remueve la clase después de cargar
+                observer.unobserve(img); // Deja de observar la imagen
+            }
+        });
     });
 
-    document.body.appendChild(btn);
-};
+    lazyImages.forEach(img => {
+        imageObserver.observe(img);
+    });
+});
+
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -117,99 +116,76 @@ carousels.forEach(carousel => {
 
 //MODAL IMAGEN COMPLETA
 
-const modal = document.getElementById("imageModal");
+document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImage");
     const closeBtn = document.querySelector(".close");
+    modal.style.display = "none";
+
+    let scale = 1, lastScale = 1, initialDistance = null;
+    let startX = 0, startY = 0, translateX = 0, translateY = 0, lastTranslateX = 0, lastTranslateY = 0;
 
     // Detectar clic en imágenes para abrir el modal
     document.querySelectorAll(".carousel-slide img").forEach(img => {
         img.addEventListener("click", function () {
             modal.style.display = "flex";
-            modalImg.src = this.src;
-            resetTransform(); // Resetea zoom y posición al abrir la imagen
+            modalImg.src = this.getAttribute("src") || this.getAttribute("data-src"); // Ajusta para lazy-load
+            resetTransform();
         });
     });
 
     // Cerrar modal
-    closeBtn.addEventListener("click", function () {
+    closeBtn.addEventListener("click", () => closeModal());
+    modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+
+    function closeModal() {
         modal.style.display = "none";
-        resetZoom();
+        resetTransform();
+    }
+
+    // Zoom táctil
+    modalImg.addEventListener("touchstart", (e) => {
+        if (e.touches.length === 2) {
+            initialDistance = getDistance(e.touches);
+            lastScale = scale;
+        } else if (e.touches.length === 1 && scale > 1) {
+            startX = e.touches[0].clientX - lastTranslateX;
+            startY = e.touches[0].clientY - lastTranslateY;
+        }
     });
 
-    modal.addEventListener("click", function (e) {
-        if (e.target === modal) {
-            modal.style.display = "none";
-            resetZoom();
+    modalImg.addEventListener("touchmove", (e) => {
+        if (e.touches.length === 2 && initialDistance) {
+            e.preventDefault();
+            let newDistance = getDistance(e.touches);
+            scale = Math.max(1, Math.min(lastScale * (newDistance / initialDistance), 4)); // Zoom entre 1x y 4x
+        } else if (e.touches.length === 1 && scale > 1) {
+            e.preventDefault();
+            translateX = e.touches[0].clientX - startX;
+            translateY = e.touches[0].clientY - startY;
         }
+        applyTransform();
     });
 
-    // Agregar zoom táctil
-    document.addEventListener("DOMContentLoaded", () => {
-        const modal = document.getElementById("imageModal");
-        const modalImg = document.getElementById("modalImage");
-        const closeBtn = document.querySelector(".close");
-        modal.style.display = "none";
-    
-        let scale = 1, lastScale = 1, initialDistance = null;
-        let startX = 0, startY = 0, translateX = 0, translateY = 0, lastTranslateX = 0, lastTranslateY = 0;
-    
-        // Abrir el modal cuando se hace clic en una imagen
-        document.querySelectorAll(".carousel-slide img").forEach(img => {
-            img.addEventListener("click", function () {
-                modal.style.display = "flex";
-                modalImg.src = this.src;
-                resetTransform();
-            });
-        });
-    
-        // Cerrar modal
-        closeBtn.addEventListener("click", () => modal.style.display = "none");
-        modal.addEventListener("click", (e) => { if (e.target === modal) modal.style.display = "none"; });
-    
-        // Zoom con dos dedos
-        modalImg.addEventListener("touchstart", (e) => {
-            if (e.touches.length === 2) {
-                initialDistance = getDistance(e.touches);
-                lastScale = scale;
-            } else if (e.touches.length === 1) {
-                startX = e.touches[0].clientX - lastTranslateX;
-                startY = e.touches[0].clientY - lastTranslateY;
-            }
-        });
-    
-        modalImg.addEventListener("touchmove", (e) => {
-            if (e.touches.length === 2 && initialDistance) {
-                e.preventDefault();
-                let newDistance = getDistance(e.touches);
-                scale = Math.max(1, Math.min(lastScale * (newDistance / initialDistance), 4)); // Zoom entre 1x y 4x
-            } else if (e.touches.length === 1 && scale > 1) {
-                e.preventDefault();
-                translateX = e.touches[0].clientX - startX;
-                translateY = e.touches[0].clientY - startY;
-            }
-            applyTransform();
-        });
-    
-        modalImg.addEventListener("touchend", () => {
-            lastTranslateX = translateX;
-            lastTranslateY = translateY;
-            initialDistance = null;
-        });
-    
-        function getDistance(touches) {
-            let dx = touches[0].clientX - touches[1].clientX;
-            let dy = touches[0].clientY - touches[1].clientY;
-            return Math.sqrt(dx * dx + dy * dy);
-        }
-    
-        function applyTransform() {
-            modalImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
-        }
-    
-        function resetTransform() {
-            scale = 1;
-            translateX = translateY = lastTranslateX = lastTranslateY = 0;
-            applyTransform();
-        }
+    modalImg.addEventListener("touchend", () => {
+        lastTranslateX = translateX;
+        lastTranslateY = translateY;
+        initialDistance = null;
     });
-    
+
+    function getDistance(touches) {
+        let dx = touches[0].clientX - touches[1].clientX;
+        let dy = touches[0].clientY - touches[1].clientY;
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+
+    function applyTransform() {
+        modalImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+    }
+
+    function resetTransform() {
+        scale = 1;
+        translateX = translateY = lastTranslateX = lastTranslateY = 0;
+        applyTransform();
+    }
+});
